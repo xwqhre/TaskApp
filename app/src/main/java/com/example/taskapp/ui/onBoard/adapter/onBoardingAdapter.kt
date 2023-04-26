@@ -1,4 +1,4 @@
-package com.example.taskapp.ui.notifications.onBoard.adapter
+package com.example.taskapp.ui.onBoard.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

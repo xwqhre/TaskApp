@@ -1,4 +1,4 @@
-package com.example.taskapp.ui.notifications.onBoard
+package com.example.taskapp.ui.onBoard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,7 +11,7 @@ import com.example.taskapp.adapter.utils.showToast
 import com.example.taskapp.databinding.FragmentOnBoardingBinding
 import com.example.taskapp.databinding.FragmentProfileBinding
 import com.example.taskapp.model.onBoard
-import com.example.taskapp.ui.notifications.onBoard.adapter.onBoardingAdapter
+import com.example.taskapp.ui.onBoard.adapter.onBoardingAdapter
 
 
 class OnBoardingFragment : Fragment() {
@@ -30,6 +30,10 @@ class OnBoardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val adapter = onBoardingAdapter(this::onClick)
         binding.viewPager.adapter= adapter
+        binding.indicator.setViewPager(binding.viewPager)
+        adapter.registerAdapterDataObserver(binding.indicator.adapterDataObserver);
+
+
     }
     private fun onClick(onBoard: onBoard){
         findNavController().navigateUp()
